@@ -2,6 +2,7 @@ lazy val V = _root_.scalafix.sbt.BuildInfo
 
 lazy val rulesCrossVersions = Seq(V.scala213, V.scala212)
 lazy val scala3Version = "3.8.1"
+lazy val zioVersion = "2.1.24"
 
 inThisBuild(
   List(
@@ -45,14 +46,20 @@ lazy val rules = projectMatrix
 
 lazy val input = projectMatrix
   .settings(
-    publish / skip := true
+    publish / skip := true,
+    libraryDependencies ++= Seq(
+      "dev.zio" %% "zio" % zioVersion
+    )
   )
   .defaultAxes(VirtualAxis.jvm)
   .jvmPlatform(scalaVersions = rulesCrossVersions :+ scala3Version)
 
 lazy val output = projectMatrix
   .settings(
-    publish / skip := true
+    publish / skip := true,
+    libraryDependencies ++= Seq(
+      "dev.zio" %% "zio" % zioVersion
+    )
   )
   .defaultAxes(VirtualAxis.jvm)
   .jvmPlatform(scalaVersions = rulesCrossVersions :+ scala3Version)
