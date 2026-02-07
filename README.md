@@ -68,3 +68,15 @@ zio.mapError(_ => "error")
 // After
 zio.orElseFail("error")
 ```
+
+### PreferZIOUnit
+
+Replaces `ZIO.succeed(())` with `ZIO.unit`.
+
+```scala
+// Before
+ZIO.succeed(())
+
+// After
+ZIO.unit
+```
