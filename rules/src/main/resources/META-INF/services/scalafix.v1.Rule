@@ -5,3 +5,4 @@ io.github.migiside.fix.PreferZIOZipRight
 io.github.migiside.fix.PreferZIOOrElseFail
 io.github.migiside.fix.PreferZIOUnit
 io.github.migiside.fix.PreferZIOIgnore
+io.github.migiside.fix.PreferZIOMapBoth

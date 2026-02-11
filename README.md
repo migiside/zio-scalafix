@@ -92,3 +92,15 @@ zio.catchAll(_ => ZIO.unit)
 // After
 zio.ignore
 ```
+
+### PreferZIOMapBoth
+
+Replaces `mapError(f).map(g)` with `mapBoth(f, g)`.
+
+```scala
+// Before
+zio.mapError(f).map(g)
+
+// After
+zio.mapBoth(f, g)
+```
