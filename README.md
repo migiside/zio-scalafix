@@ -80,3 +80,15 @@ ZIO.succeed(())
 // After
 ZIO.unit
 ```
+
+### PreferZIOIgnore
+
+Replaces `catchAll(_ => ZIO.unit)` with `ignore`.
+
+```scala
+// Before
+zio.catchAll(_ => ZIO.unit)
+
+// After
+zio.ignore
+```
